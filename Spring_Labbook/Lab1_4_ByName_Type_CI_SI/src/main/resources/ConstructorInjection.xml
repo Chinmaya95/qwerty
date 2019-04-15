@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+  
+
+  
+<bean id="emp1" class="com.cg.intro.Employee">  
+<constructor-arg value="1"></constructor-arg>  
+<constructor-arg value="Barun Sharma"></constructor-arg>  
+<constructor-arg type="double" value="5000"></constructor-arg>  
+</bean>  
+<bean id="emp2" class="com.cg.intro.Employee">  
+<constructor-arg value="2"></constructor-arg>  
+<constructor-arg value="Vinod Sharma"></constructor-arg>  
+<constructor-arg type="double" value="1000"></constructor-arg>  
+</bean>  
+  
+<bean id="eList" class="com.cg.intro.ECollection">  
+<constructor-arg>  
+<list>  
+<ref bean="emp1"/>  
+<ref bean="emp2"/>  
+</list>  
+</constructor-arg>  
+</bean>  
+
+
+  <bean id="eDao" class="com.cg.intro.EmployeeDao">  
+<constructor-arg>  
+<ref bean="eList"/>  
+</constructor-arg>   
+</bean>  
+
+ <bean id="eService" class="com.cg.intro.EmployeeService">  
+<constructor-arg>  
+<ref bean="eDao"/>  
+</constructor-arg>   
+</bean>  
+  
+  
+</beans>  

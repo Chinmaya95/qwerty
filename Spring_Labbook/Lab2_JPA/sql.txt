@@ -1,0 +1,22 @@
+SQL> CREATE TABLE Trainee_details
+  2  (
+  3    traineeId numeric(10) not null,
+  4    traineeName varchar2(50),
+  5      traineeDomain varchar2(50),
+  6    traineeLocation varchar2(50));
+  
+  
+  SQL> select * from Trainee_details;
+  
+  
+  SQL> CREATE TABLE user_login
+  2  (
+  3    username varchar2(50) NOT NULL,
+  4    password varchar2(50),
+  5      CONSTRAINT user_login_pk PRIMARY KEY (username));
+  
+  
+  SQL> insert into user_login('chinmay','super');
+  
+  
+  SQL> select * from user_login;
